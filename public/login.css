@@ -1,0 +1,132 @@
+/* variables are justify to reference them later in the code */
+
+body {
+  --color-primary: #9fb8ad;   
+  --color-primary-dark: #475841;
+  --color-secondary: #3f403f;
+  --color-error: #cc3333;
+  --color-succes: #4bb544;
+  --border-radius: 4px;
+
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center; /* center the container in the middle of the page */
+  justify-content: center;
+  font-size: 18px;
+  background-color: #ced0ce;
+  background-size: cover;
+
+}
+
+.container {
+  width: 400px;
+  max-width: 400px;  /* will adjust the size of the container when displayed on a smaller screen */
+  margin: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.02);
+  border-radius: var(--border-radius);
+  background: #ffffff;
+}
+
+.container,
+.form__input,
+.form__button {
+  font-family: sans-serif;
+}
+
+.form--hidden{
+  display: none;
+}
+
+.form > *:first-child {  /* since the form starts and ends with different tags i want to get rid of the that extra margin */
+  margin-top: 0;
+}
+
+.form > *:last-child {
+  margin-top: 0;
+}
+
+.form__title {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form__message {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form__message--success {
+  color: var(--color-succes)
+}
+
+.form__message--error {
+  color: var(--color-error)
+}
+
+.form__input-group {
+  margin-bottom: 1rem;
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  padding: .75rem;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  border: 1px solid;
+  outline: none;
+  background: #eeeeee;
+  transition: background 0.20s, border-color 0.2s;
+}
+
+.form__input:focus {
+  border-color: var(--color-primary);
+  background: #ffffff;
+}
+
+.form__input-error {
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.form__input-error {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-error);
+}
+
+.form__button {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  background: var(--color-primary);
+}
+
+.form__button :hover {
+  background: var(--color-primary-dark);
+}
+
+.form__button:active {
+  transform: scale(0.98); /* resizing the button by 2% when i click on it */
+}
+
+.form__text {
+  text-align: center;
+}
+
+.form__link {
+  color: var(--color-secondary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form__link:hover {
+  text-decoration: underline;
+}
+

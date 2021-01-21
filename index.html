@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunny Skies</title>
+  <link rel="stylesheet" type="text/css" href="/public/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+  <base href="/">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Navbar styling */
+    .stickynav {
+      overflow: hidden;
+      background-color: #3F403F;
+      width: 100%;
+      color: white;
+      position: relative;
+      top: 0px;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      float: right;
+      font-size: 18px;
+      padding: 20px 30px;
+      display: block;
+      transition: all 0.3s ease 0s;
+
+    }
+
+    nav a:hover {
+      background-color: #474A46;
+      color: #9FB8AD;
+    }
+
+
+    /*-----HEADER----*/
+    header {
+      background-color: #475841;
+      text-align: center;
+      padding: 15px;
+      width: 100%;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    header h1 {
+      margin: 0px;
+      padding: 5px;
+      font-size: 30px;
+      color: #E6E8E6;
+      font-weight: 600;
+      font-family: 'Raleway', sans-serif;
+
+    }
+
+    h1 span {
+      font-weight: 400;
+    }
+
+    .navheader {
+      color: #9FB8AD;
+    }
+
+    .user__display {
+      display: flex;
+      color: white;
+      /* float: right; */
+      font-weight: 600;
+      font-size: 45px;
+      text-align: center;
+      vertical-align: middle;
+      justify-content: flex-end;
+      /* padding: 15px; */
+    }
+
+    /*---Styles the searchbar font and alignment---*/
+
+    .locationtext {
+      color: #3F403F;
+      position: relative;
+      text-emphasis: bold;
+      font-size: 20px;
+      float: left;
+      padding: 15px 30px;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    /*-----STYLES THE SEARCH  BAR-----*/
+    input[type=text] {
+      align-content: center;
+      width: 500px;
+      box-sizing: border-box;
+      border: 3px;
+      border-radius: 6px;
+      font-size: 16px;
+      background-color: #9FB8AD;
+      background-image: url('https://fontawesome.com/icons/location-arrow?style=solid');
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+      -webkit-transition: width 0.25s ease-in-out;
+      transition: width 0.25s ease-in-out;
+    }
+
+    form.search button {
+      float: inline-end;
+      width: 20%;
+      padding: 10px;
+      background: #475841;
+      color: white;
+      font-size: 17px;
+      border: 1px solid grey;
+      border-left: none;
+      /* Prevent double borders */
+      cursor: pointer;
+    }
+
+
+    /* Makes the search bar expand when hovered over/is active */
+    input[type=text]:focus {
+      width: 600px;
+    }
+
+    input[type=text]:hover {
+      width: 600px;
+    }
+
+    .hero-search {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
+
+    .hero-text {
+      font-size: 3em;
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-family: 'Raleway', sans-serif;
+    }
+
+
+    /* Carousel Styling */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .pic-ctn {
+      width: 200vw;
+      height: 200px;
+    }
+
+    @keyframes display {
+      0% {
+        transform: translateX(200px);
+        opacity: 0;
+      }
+
+      10% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      20% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      30% {
+        transform: translateX(-200px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(-200px);
+        opacity: 0;
+      }
+    }
+
+    .pic-crsl {
+      position: relative;
+      width: 100%;
+      height: 300px;
+    }
+
+    .pic-crsl>img {
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      animation: display 30s infinite;
+    }
+
+    img:nth-child(2) {
+      animation-delay: 8s;
+    }
+
+    img:nth-child(3) {
+      animation-delay: 14s;
+    }
+
+    img:nth-child(4) {
+      animation-delay: 20s;
+    }
+
+    img:nth-child(5) {
+      animation-delay: 26s;
+    }
+
+    /* WEATHER STYLING */
+
+    .weather-container {
+      display: block;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .weather-container .city {
+      margin-top: 20px;
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .weather-container .date {
+      font-size: 16px;
+    }
+
+    .weather-container .temp {
+      font-size: 100px;
+      font-weight: 900;
+      margin: 3px 0px;
+      text-shadow: 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .weather-container .temp span {
+      font-weight: 500;
+    }
+
+    .weather-container .weather {
+      font-size: 32px;
+      font-weight: 700;
+      font-style: italic;
+      padding-top: 15px;
+      margin-bottom: 15px;
+      text-shadow: 0px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .weather-container .hi-low {
+      font-size: 24px;
+      font-weight: 500;
+      text-shadow: 0px 4px rgba(0, 0, 0, 0.4);
+    }
+
+
+
+    /* Responsive search bar and hero text */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      input[type=text] {
+        width: 200px;
+        align-content: center;
+        box-sizing: border-box;
+        border: 3px;
+        border-radius: 6px;
+        font-size: 16px;
+        background-color: #9FB8AD;
+        background-image: url('https://fontawesome.com/icons/location-arrow?style=solid');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.25s ease-in-out;
+        transition: width 0.25s ease-in-out;
+      }
+
+      input[type=text]:focus {
+        width: 400px;
+      }
+
+      input[type=text]:hover {
+        width: 400px;
+      }
+
+      .hero-text {
+        font-size: 24px;
+      }
+
+    }
+
+    .footer {
+      /* font-family: 'Raleway', sans-serif; */
+  position: relative;
+  width: 100%;
+  background-color: #3F403F;
+  text-align: center;
+  justify-content: center;
+  vertical-align: center;
+  color: white;
+  height:200px;
+  top: 900px;
+}
+.fa {
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.fa:hover {
+  opacity: 0.5;
+}
+  </style>
+</head>
+
+
+<body>
+  <header>
+    <h1>Sunny Skies</h1>
+    <p class="navheader" style="text-align:center;">What's the weather?</p>
+  </header>
+  <div class="stickynav">
+    <nav>
+      <a href="/public/login.html">login</a>
+      <a href="/public/about.html">about</a>
+      <a href="index.html">home</a>
+    </nav>
+  </div>
+  <div class="content">
+    <!-- <div class="hero-image"> -->
+    <div class="pic-crsl">
+      <img
+        src="https://images.unsplash.com/photo-1499095077094-34ebb24d388e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8&auto=format&fit=crop&w=1920&q=1080"
+        alt="" class="pic">
+      <img
+        src="https://images.unsplash.com/photo-1528202828746-a525adcb7d1d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=1080"
+        alt="" class="pic">
+      <img
+        src="https://images.unsplash.com/photo-1425736317462-a103b1303a35?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=1080"
+        alt="" class="pic">
+      <img
+        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixid=MXwxMjA3fDB8MHxwaG90[…]DB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=1080
+        "
+        alt="" class="pic">
+      <img
+        src="https://images.unsplash.com/photo-1496991420321-bea20bfafe80?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8&auto=format&fit=crop&w=1920&q=1080"
+        alt="" class="pic">
+    </div>
+    <section class="hero-text">
+
+      <h2 class="user__display" id="user__display"></h2>
+
+      <a>
+        <h2>One earth, one effort.</h2>
+      </a>
+    </section>
+
+    <div class="search">
+      <section class="hero-search">
+        <a><input type="text" name="search" class="locationtext" placeholder="Enter location..."></a> <br>
+      </section>
+      <div class="weather-container">
+        <div class="city box"></div>
+        <div class="date box"></div>
+        <div class="temp box"><span></span></div>
+        <div class="weather box"></div>
+        <div class="hi-low box"></div>
+        <div class="air-quality box"></div>
+      </div>
+      <!-- <button id = "find-me">Show my location</button><br/>
+          <p id = "status"></p>
+          <a id = "map-link" target="_blank"></a> -->
+    </div>
+    <footer class="footer">
+      <a href="https://twitter.com"  title="Twitter" class="fa fa-twitter"></a>
+    <a href="https://www.facebook.com/" title="Facebook" class="fa fa-facebook"></a>
+    <a href="https://www.instagram.com/" class="fa fa-instagram" title="Instagram"></a>
+    <h5>FAQ</h5>
+    <h5>Customer service Hotline:(123)-456-789</h5>
+    <h5>Help</h5>
+    <h5 style="text-align: center;">©Sunny skies, All Rights Reserved 2020</h5>
+    </footer>
+    <script>
+      const api = {
+        key: "6a19e904bcc229d32f3170ab79c484d2",
+        baseurl: "https://api.openweathermap.org/data/2.5/"
+      }
+
+      const searchBox = document.querySelector('.locationtext');
+      searchBox.addEventListener('keypress', setQuery);
+
+      function setQuery(evt) {
+        if (evt.keyCode == 13) {
+          getResults(searchBox.value);
+        }
+      }
+
+      function getResults(query) {
+        fetch(`${api.baseurl}weather?q=${query}&units=imperial&APPID=${api.key}`) //getting information from the api server
+          .then(weather => {
+            return weather.json();
+          }).then(displayResults);
+      }
+
+      function displayResults(weather) {
+        console.log(weather);
+        let city = document.querySelector('.weather-container .city');
+        city.innerText = `${weather.name}, ${weather.sys.country}`;
+        
+        let now = new Date();;
+        let date = document.querySelector('.weather-container .date');
+        date.innerText = dateBuilder(now);
+
+        let temp = document.querySelector('.weather-container .temp');
+        temp.innerHTML = `${Math.round(weather.main.temp)}<span>°f</span>`;
+
+        let weather_el = document.querySelector('.weather-container .weather');
+        weather_el.innerText = weather.weather[0].description;
+
+        let hilow = document.querySelector('.weather-container .hi-low');
+        hilow.innerText = `${Math.round(weather.main.temp_min)}°f / ${Math.round(weather.main.temp_max)}°f`
+
+      }
+
+      function dateBuilder(d) {
+        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        let day = days[d.getDay()];
+        let date = d.getDate();
+        let month = months[d.getMonth()];
+        let year = d.getFullYear();
+
+        return `${day} ${date} ${month} ${year}`;
+      }
+    </script>
+  </body>
+</html>
